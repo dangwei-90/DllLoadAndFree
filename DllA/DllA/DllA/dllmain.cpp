@@ -12,7 +12,9 @@ BOOL APIENTRY DllMain( HMODULE hModule,
     MessageBoxA(NULL, "DLL A attach." ,"DLL A", MB_OK);
     break;
   case DLL_THREAD_ATTACH:
+    break;
   case DLL_THREAD_DETACH:
+    break;
   case DLL_PROCESS_DETACH:
     MessageBoxA(NULL, "DLL A detach.", "DLL A", MB_OK);
     break;
