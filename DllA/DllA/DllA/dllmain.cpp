@@ -4,8 +4,10 @@
 
 #include "pch.h"
 
-#pragma comment(lib,"DllB.lib")
-extern "C" _declspec(dllimport) int subtest(int a, int b);
+/////////////////// 隐式调用 ///////////////////////
+//#pragma comment(lib,"DllB.lib")
+//extern "C" _declspec(dllimport) int subtest(int a, int b);
+/////////////////// 隐式调用 ///////////////////////
 
 BOOL APIENTRY DllMain(HMODULE hModule,
   DWORD  ul_reason_for_call,
@@ -15,7 +17,6 @@ BOOL APIENTRY DllMain(HMODULE hModule,
   switch (ul_reason_for_call)
   {
   case DLL_PROCESS_ATTACH:
-    subtest(5,1);
     MessageBoxA(NULL, "DLL A attach.", "DLL A", MB_OK);
     break;
   case DLL_THREAD_ATTACH:
